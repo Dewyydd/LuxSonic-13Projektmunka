@@ -1,0 +1,170 @@
+:root {
+    --lux-purple: #2b1531;
+    --lux-purple-deep: #1e0e24;
+    --lux-white: #ffffff;
+    --lux-cream: #f2efe9;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--lux-cream);
+  }
+
+  /* --- NAVBAR --- */
+  .lux-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .lux-navbar:hover,
+  .lux-navbar.scrolled {
+    background-color: var(--lux-white);
+    box-shadow: 0 1px 10px rgba(0,0,0,0.15);
+    padding: 1.3rem 0;
+    border-bottom: 1px solid var(--lux-purple);
+  }
+
+  .lux-navbar:hover .lux-brand,
+  .lux-navbar.scrolled .lux-brand,
+  .lux-navbar:hover .lux-menu-btn,
+  .lux-navbar.scrolled .lux-menu-btn,
+  .lux-navbar:hover .lux-icon-btn,
+  .lux-navbar.scrolled .lux-icon-btn {
+    color: var(--lux-purple-deep);
+  }
+
+  .lux-navbar .container-fluid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+    padding: 0 2.5rem;
+  }
+
+  /* left: hamburger + text */
+  .lux-menu-btn {
+    background: none;
+    border: none;
+    color: var(--lux-white);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0;
+    justify-self: start;
+    transition: color 0.2s ease;
+  }
+
+  .lux-menu-btn:hover {
+    color: var(--lux-purple);
+  }
+
+  .lux-menu-btn .bar-icon {
+    width: 22px;
+    height: 14px;
+    position: relative;
+  }
+  .lux-menu-btn .bar-icon span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transition: background 0.2s ease;
+  }
+  .lux-menu-btn .bar-icon span:nth-child(1) { top: 0; }
+  .lux-menu-btn .bar-icon span:nth-child(2) { top: 6px; }
+  .lux-menu-btn .bar-icon span:nth-child(3) { top: 12px; }
+
+  /* center: logo */
+  .lux-brand {
+    justify-self: center;
+    color: var(--lux-white);
+    font-size: 1.05rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .lux-brand:hover {
+    color: var(--lux-purple);
+  }
+
+  /* right: cart */
+  .lux-actions {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .lux-icon-btn {
+    background: none;
+    border: none;
+    color: var(--lux-white);
+    padding: 0;
+    line-height: 0;
+    transition: color 0.2s ease;
+  }
+
+  .lux-icon-btn:hover {
+    color: var(--lux-purple);
+  }
+
+  /* --- Offcanvas menu styling to match brand --- */
+  .lux-offcanvas {
+    background: #000000;
+    color: var(--lux-white);
+    width: 380px;
+    border-right: 1px solid var(--lux-purple);
+  }
+  .lux-offcanvas .nav-link {
+    color: var(--lux-white);
+    font-size: 1.4rem;
+    letter-spacing: 0.03em;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .lux-offcanvas .nav-link:hover {
+    color: var(--lux-purple);
+    border-bottom-color: var(--lux-purple);
+  }
+  .lux-offcanvas .btn-close {
+    filter: invert(1);
+  }
+
+  /* demo hero so you can see the transparent-over-image effect */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(30,14,36,0.55), rgba(30,14,36,0.1) 40%),
+                url('https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1974&auto=format&fit=crop') center/cover;
+    display: flex;
+    align-items: flex-end;
+    padding: 4rem 2rem;
+  }
+  .hero h1 {
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    max-width: 520px;
+  }
+
+  @media (max-width: 576px) {
+    .lux-brand { font-size: 0.85rem; letter-spacing: 0.18em; }
+    .lux-navbar .container-fluid { padding: 0 1rem; }
+  }

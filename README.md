@@ -1,1 +1,0 @@
-# LuxSonic-13Projektmunka

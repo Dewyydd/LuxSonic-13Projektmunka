@@ -17,9 +17,13 @@ body {
   font-family: "Ubuntu";
 }
 
+#mainStuff {
+  height: 75vh;
+}
+
 #underNavImg {
   position: relative;
-  height: 65vh;
+  height: 80vh;
   background-image: url(../images/_DSC1284.JPG);
   background-position: top;
   background-size: cover;
@@ -86,7 +90,7 @@ body {
 
 nav {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   box-sizing: border-box;
@@ -120,6 +124,15 @@ nav > div > h1 {
   font-weight: 900;
   font-family: "Doppio One";
   transition: color 0.4s ease;
+}
+
+nav > div > h1 > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#profileIcon a {
+  display: flex;
 }
 
 #hamburger,

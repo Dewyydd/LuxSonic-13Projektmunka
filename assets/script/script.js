@@ -5,21 +5,27 @@ let hamburger = document.querySelector("#hamburger").querySelector("svg");
 let profileIcon = document.querySelector("#profileIcon").querySelector("svg");
 let menuOverlay = document.querySelector("#menuOverlay");
 let closeNav = document.querySelector("#closeNav");
+let bottomMenu = document.querySelector("#bottomMenu");
+let bottomHome = document.querySelector("#bottomHome");
 
 let hover = false;
 let scrolledOver = false;
 
-hamburger.onclick = function () {
+function openMenu() {
   body.classList.toggle("menuOverlayVisible");
   body.classList.toggle("menuOverlayInvisible");
   body.style.overflow = "hidden";
 };
+
 
 function CloseMenu() {
   body.classList.toggle("menuOverlayVisible");
   body.classList.toggle("menuOverlayInvisible");
   body.style.overflow = "";
 }
+
+hamburger.onclick = openMenu;
+bottomMenu.onclick = openMenu;
 
 closeNav.onclick = CloseMenu;
 menuOverlay.onclick = CloseMenu;
@@ -56,4 +62,9 @@ window.onscroll = function () {
     scrolledOver = false;
     updateNav();
   }
+};
+
+bottomHome.onclick = function (event) {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };

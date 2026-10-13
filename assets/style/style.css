@@ -54,6 +54,7 @@ body {
   padding: 1.5%;
   gap: 1.5%;
   width: 22.5%;
+  min-width: 350px;
   height: 100vh;
   position: fixed;
   background-color: black;
@@ -162,4 +163,92 @@ nav > div > h1 > p {
 
 .invertedNavItem {
   color: black;
+}
+
+
+#bottomNav {
+  display: none;
+}
+ 
+@media (max-width: 768px) {
+  #bottomNav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 64px;
+    z-index: 2;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  #bottomNav > div > svg,
+  #bottomNav > a > svg {
+      fill: black;
+  }
+ 
+  .bottomBtn {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+ 
+  #hamburger,
+  #profileIcon {
+    display: none;
+  }
+ 
+  nav > div {
+    justify-content: center;
+  }
+
+  body {
+    padding-bottom: 64px;
+  }
+ 
+  html,
+  body {
+    overflow-x: hidden;
+  }
+ 
+  nav {
+    width: 100vw;
+    left: 0;
+    right: 0;
+  }
+ 
+  nav > div {
+    width: 100%;
+    padding: 0 12px;
+  }
+ 
+  nav > div > h1 {
+    font-size: 1.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    min-width: 0;
+  }
+ 
+  #sideNav {
+    width: 100%;
+    padding: 4%;
+    gap: 12px;
+    overflow: hidden;
+  }
+ 
+  #sideNav > h1 {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+  }
 }

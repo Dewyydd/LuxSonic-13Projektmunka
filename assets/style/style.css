@@ -214,6 +214,11 @@ nav > div > h1 > p {
     padding-bottom: 64px;
   }
  
+  html,
+  body {
+    overflow-x: hidden;
+  }
+ 
   nav {
     width: 100vw;
     left: 0;
@@ -246,4 +251,435 @@ nav > div > h1 > p {
     white-space: nowrap;
     text-overflow: clip;
   }
+}
+/* ---------- Homepage content ---------- */
+:root {
+  --ink: #111;
+  --muted: #6b6b6b;
+  --stone: #ece9e4;
+}
+
+#mainStuff {
+  height: auto;
+  background: #fff;
+  color: var(--ink);
+}
+
+#underNavImg {
+  display: flex;
+  align-items: flex-end;
+  background-color: #2a2a2a;
+}
+
+.heroText {
+  position: relative;
+  z-index: 1;
+  color: white;
+  max-width: 900px;
+  padding: 0 5% 6vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.heroText h2 {
+  font-family: "Doppio One";
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.heroText p:not(.eyebrow) {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: inherit;
+  opacity: 0.8;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btnLight {
+  color: white;
+  border-color: white;
+}
+.btnLight:hover {
+  background: white;
+  color: black;
+}
+.btnDark {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.btnDark:hover {
+  background: var(--ink);
+  color: white;
+}
+
+.sectionHead {
+  padding: 10vh 5% 5vh;
+  text-align: center;
+}
+.sectionHead h2 {
+  font-family: "Doppio One";
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+}
+
+.tileGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 0 8px;
+}
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+}
+.tileImg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s ease;
+}
+.tile:hover .tileImg {
+  transform: scale(1.04);
+}
+.tileA .tileImg {
+  background: linear-gradient(135deg, #8d8479, #3d3832);
+}
+.tileB .tileImg {
+  background: linear-gradient(135deg, #b9b6b0, #5d5a55);
+}
+.tileCaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+}
+.tileCaption h3 {
+  font-family: "Doppio One";
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+.tileCaption p {
+  font-weight: 300;
+  margin-top: 4px;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 8px 0;
+  background: var(--stone);
+}
+.featureImg {
+  min-height: 70vh;
+  background: linear-gradient(160deg, #b5715a, #6e3b2c);
+}
+.featureText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 8%;
+}
+.featureText h2 {
+  font-family: "Doppio One";
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+.featureText p:not(.eyebrow) {
+  font-weight: 300;
+  color: var(--muted);
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 0 8px;
+}
+.cat {
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 3 / 4;
+  padding: 24px;
+  color: white;
+  text-decoration: none;
+  font-family: "Doppio One";
+  font-size: 1.4rem;
+  transition: filter 0.3s ease;
+}
+.cat:nth-child(1) { background: linear-gradient(160deg, #7b746b, #2f2c28); }
+.cat:nth-child(2) { background: linear-gradient(160deg, #a09a92, #403d39); }
+.cat:nth-child(3) { background: linear-gradient(160deg, #5f5b56, #1c1b19); }
+.cat:hover { filter: brightness(1.15); }
+
+.community {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 12vh 5%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.community h2 {
+  font-family: "Doppio One";
+  font-weight: 400;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+.community h3 {
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+.community ul {
+  list-style: none;
+  color: var(--muted);
+  line-height: 1.9;
+}
+.newsletter {
+  display: flex;
+  width: 100%;
+  max-width: 480px;
+  gap: 8px;
+}
+.newsletter input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+#mainFooter {
+  background: black;
+  color: white;
+  padding: 8vh 5% 4vh;
+}
+.footCols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.footCols div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footCols h4 {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.footCols a {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+.footCols a:hover {
+  color: white;
+}
+.wordmark {
+  font-family: "Doppio One";
+  font-variant: small-caps;
+  font-size: clamp(3rem, 14vw, 11rem);
+  text-align: center;
+  margin: 8vh 0 2vh;
+  line-height: 1;
+}
+.copy {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .tileGrid,
+  .feature,
+  .categories {
+    grid-template-columns: 1fr;
+  }
+  .featureImg {
+    min-height: 45vh;
+  }
+  .cat {
+    aspect-ratio: 16 / 9;
+  }
+  .footCols {
+    grid-template-columns: 1fr 1fr;
+  }
+  .newsletter {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Page previews ---------- */
+.heroBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tileLink {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-weight: 300;
+  color: var(--muted);
+}
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+}
+.steps li::before {
+  content: counter(step);
+  font-family: "Doppio One";
+  font-size: 1.4rem;
+  color: var(--ink);
+}
+.steps strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.galleryPreview {
+  padding: 10vh 8px 12vh;
+}
+.galleryHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0 5% 32px;
+}
+.galleryHead h2 {
+  font-family: "Doppio One";
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+}
+.galleryStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.gThumb {
+  aspect-ratio: 1;
+  transition: filter 0.3s ease;
+}
+.gThumb:hover { filter: brightness(1.15); }
+.g1 { background: linear-gradient(160deg, #7b746b, #2f2c28); }
+.g2 { background: linear-gradient(160deg, #a09a92, #403d39); }
+.g3 { background: linear-gradient(160deg, #8d8479, #3d3832); }
+.g4 { background: linear-gradient(160deg, #5f5b56, #1c1b19); }
+
+@media (max-width: 768px) {
+  .galleryStrip {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- Footer additions ---------- */
+.footCols {
+  grid-template-columns: repeat(5, 1fr);
+}
+.footCols span {
+  color: #bbb;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+.footLegal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #333;
+}
+.footLegal a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.footLegal a:hover {
+  color: white;
+}
+@media (max-width: 768px) {
+  .footCols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- Animációk ---------- */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+.reveal-up   { transform: translateY(40px); }
+.reveal-left { transform: translateX(-60px); }
+.reveal-zoom { transform: scale(0.9); }
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero belépő animáció */
+.heroText > * {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.heroText > :nth-child(2) { animation-delay: 0.25s; }
+@keyframes heroIn {
+  to { opacity: 1; transform: none; }
+}
+
+/* Hover finomságok */
+.tile, .gThumb { overflow: hidden; }
+.btn:hover { transform: translateY(-2px); }
+.btn { transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .heroText > * { animation: none; opacity: 1; transform: none; }
 }

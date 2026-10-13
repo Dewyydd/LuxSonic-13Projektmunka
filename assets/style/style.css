@@ -683,3 +683,39 @@ nav > div > h1 > p {
 @media (prefers-reduced-motion: reduce) {
   .heroText > * { animation: none; opacity: 1; transform: none; }
 }
+
+/* ---------- Hover animációk (nav + oldalmenü) ---------- */
+
+/* Oldalmenü linkek: növekvő aláhúzás */
+#sideNav > h1 > a {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+#sideNav > h1 > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+#sideNav > h1 > a:hover::after { transform: scaleX(1); }
+#sideNav > h1 > a:hover { transform: translateX(6px); }
+
+/* Navigáció: logó és ikonok */
+nav > div > h1 > a { transition: letter-spacing 0.4s ease; }
+nav > div > h1 > a:hover { letter-spacing: 0.06em; }
+#hamburger svg, #profileIcon svg, #closeNav svg {
+  transition: fill 0.4s ease, transform 0.3s ease;
+}
+#hamburger:hover svg, #profileIcon:hover svg { transform: scale(1.12); }
+#closeNav:hover svg { transform: rotate(90deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  #sideNav > h1 > a, nav > div > h1 > a { transition: none; }
+}

@@ -214,11 +214,6 @@ nav > div > h1 > p {
     padding-bottom: 64px;
   }
  
-  html,
-  body {
-    overflow-x: hidden;
-  }
- 
   nav {
     width: 100vw;
     left: 0;

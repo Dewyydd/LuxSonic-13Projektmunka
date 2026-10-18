@@ -1,12 +1,11 @@
 let body = document.querySelector("body");
-let nav = document.querySelector("nav");
+let nav = document.querySelector("#mainNav");
 let title = document.querySelector("#websiteTitle");
 let hamburger = document.querySelector("#hamburger").querySelector("svg");
 let profileIcon = document.querySelector("#profileIcon").querySelector("svg");
 let menuOverlay = document.querySelector("#menuOverlay");
 let closeNav = document.querySelector("#closeNav");
 let bottomMenu = document.querySelector("#bottomMenu");
-let bottomHome = document.querySelector("#bottomHome");
 
 let hover = false;
 let scrolledOver = false;
@@ -62,9 +61,4 @@ window.onscroll = function () {
     scrolledOver = false;
     updateNav();
   }
-};
-
-bottomHome.onclick = function (event) {
-  event.preventDefault();
-  window.scrollTo({ top: 0, behavior: "smooth" });
 };

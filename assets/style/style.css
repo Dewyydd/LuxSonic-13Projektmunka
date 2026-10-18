@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Doppio+One&display=swap");
 
+:root {
+  --ink: #111;
+  --muted: #6b6b6b;
+  --stone: #ece9e4;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,32 +27,16 @@ body {
   height: 75vh;
 }
 
-#underNavImg {
-  position: relative;
-  height: 80vh;
-  background-image: url(../images/DSC1284.JPG);
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-#underNavImg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-}
-
 #menuOverlay {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.65);
   width: 100vw;
   height: 100vh;
-  z-index: 3;
+  z-index: 4;
 }
 
 #sideNav {
-  z-index: 4;
+  z-index: 5;
   color: white;
   display: flex;
   flex-direction: column;
@@ -66,7 +56,8 @@ body {
 #sideNav > h1 > a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 #closeNav {
@@ -90,7 +81,7 @@ body {
 }
 
 nav {
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;
@@ -165,11 +156,157 @@ nav > div > h1 > p {
   color: black;
 }
 
-
 #bottomNav {
   display: none;
 }
- 
+
+#underNavImg {
+  position: relative;
+  height: 80vh;
+  background-image: url(../images/DSC1284.JPG);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#underNavImg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+#underNavImg {
+  display: flex;
+  align-items: flex-end;
+  background-color: #2a2a2a;
+}
+
+.underNavText {
+  position: relative;
+  z-index: 1;
+  color: white;
+  max-width: 900px;
+  padding: 0 5% 6vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: start;
+}
+
+.underNavText h2 {
+  font-family: "Doppio One";
+  font-size: clamp(2rem, 5vw, 3.5rem); /* min 2rem max 3.5rem */
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.underNavGombok {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.gomb {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.gombLight {
+  color: white;
+  border-color: white;
+}
+.gombLight:hover {
+  background: white;
+  color: black;
+}
+
+.gombDark {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.gombDark:hover {
+  background: var(--ink);
+  color: white;
+}
+
+/* footer szarsagok */
+footer {
+  background: black;
+  color: white;
+  padding: 8vh 5% 4vh;
+}
+
+.footerOszlopok {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+.footerOszlopok div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footerOszlopok h4 {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.footerOszlopok a,
+.footerOszlopok span {
+  color: #bbb;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+.footerOszlopok a {
+  text-decoration: none;
+}
+.footerOszlopok a:hover {
+  color: white;
+}
+
+.nagyFooter {
+  font-family: "Doppio One";
+  font-variant: small-caps;
+  font-size: clamp(3rem, 10vw, 8rem);
+  text-align: center;
+  margin: 8vh 0 2vh;
+  line-height: 1;
+}
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.footerLegal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #333;
+}
+.footerLegal a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.footerLegal a:hover {
+  color: white;
+}
+
 @media (max-width: 768px) {
   #bottomNav {
     display: flex;
@@ -186,9 +323,9 @@ nav > div > h1 > p {
 
   #bottomNav > div > svg,
   #bottomNav > a > svg {
-      fill: black;
+    fill: black;
   }
- 
+
   .bottomBtn {
     flex: 1;
     height: 100%;
@@ -197,14 +334,13 @@ nav > div > h1 > p {
     justify-content: center;
     cursor: pointer;
     text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
   }
- 
+
   #hamburger,
   #profileIcon {
     display: none;
   }
- 
+
   nav > div {
     justify-content: center;
   }
@@ -212,37 +348,30 @@ nav > div > h1 > p {
   body {
     padding-bottom: 64px;
   }
- 
+
   nav {
     width: 100vw;
     left: 0;
     right: 0;
   }
- 
+
   nav > div {
     width: 100%;
     padding: 0 12px;
   }
- 
+
   nav > div > h1 {
     font-size: 1.8em;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: clip;
-    min-width: 0;
   }
- 
+
   #sideNav {
     width: 100%;
     padding: 4%;
     gap: 12px;
     overflow: hidden;
   }
- 
+
   #sideNav > h1 {
     max-width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: clip;
   }
 }

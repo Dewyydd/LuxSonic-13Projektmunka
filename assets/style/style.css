@@ -139,8 +139,8 @@ button {
   text-decoration: none;
   font-size: 2.5rem;
   color: white;
+  font-weight: bold;
   font-variant: small-caps;
-  font-weight: 900;
   font-family: "Doppio One";
   transition:
     color 0.5s ease,

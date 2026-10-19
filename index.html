@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="./assets/style/style.css" />
   </head>
   <body class="menuOverlayInvisible">
-
-
     <!-- navigacios cuccok -->
-    <aside id="sideNav">
-      <div id="closeNav">
+    <nav id="sideNav">
+      <button type="button" id="closeNav">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="48"
@@ -24,40 +22,44 @@
             d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
           />
         </svg>
-      </div>
+      </button>
 
-      <h1><a href="#">Főoldal</a></h1>
-      <h1><a href="#">Eszközkatalógus</a></h1>
-      <h1><a href="#">Rendelés</a></h1>
-      <h1><a href="#">Galéria</a></h1>
-      <h1><a href="#">Profil</a></h1>
-    </aside>
+      <ul>
+        <li><a href="#">Főoldal</a></li>
+        <li><a href="#">Eszközkatalógus</a></li>
+        <li><a href="#">Rendelés</a></li>
+        <li><a href="#">Galéria</a></li>
+        <li><a href="#">Profil</a></li>
+      </ul>
+    </nav>
 
     <div id="menuOverlay"></div>
 
-    <nav id="mainNav">
-      <div>
-        <div id="hamburger">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
-            fill="white"
-            class="bi bi-list"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-            />
-          </svg>
-        </div>
-        <h1 id="websiteTitle">
-          <a href="#">LuxSonic</a>
-          <p>EST. 2026</p>
-        </h1>
-        <div id="profileIcon">
-          <a href="#">
+    <header>
+      <nav id="mainNav">
+        <div>
+          <button type="button" id="hamburger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              fill="white"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+              />
+            </svg>
+          </button>
+
+          <a href="#" id="websiteTitle">
+            LuxSonic
+            <span>EST. 2026</span>
+          </a>
+
+          <a href="#" id="profileIcon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -72,11 +74,11 @@
             </svg>
           </a>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
-    <div id="bottomNav">
-      <div id="bottomMenu" class="bottomBtn">
+    <nav id="bottomNav">
+      <button type="button" id="bottomMenu" class="bottomBtn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="48"
@@ -90,7 +92,7 @@
             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
           />
         </svg>
-      </div>
+      </button>
       <a href="#" id="bottomHome" class="bottomBtn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +107,7 @@
           />
         </svg>
       </a>
-      <div id="bottomProfile" class="bottomBtn">
+      <a href="#" id="bottomProfile" class="bottomBtn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="48"
@@ -118,26 +120,28 @@
             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
           />
         </svg>
-      </div>
-    </div>
+      </a>
+    </nav>
 
     <!-- fooldal cuccosai -->
-    <section id="underNavImg">
-      <div class="underNavText">
-        <h2>Profi felszerelés, amikor szükséged van rá.</h2>
-        <div class="underNavGombok">
-          <a href="#" class="gomb gombLight">Eszközkatalógus</a>
-          <a href="#" class="gomb gombLight">Bérlés</a>
+    <main>
+      <section id="underNavImg">
+        <div class="underNavText">
+          <h1 id="heroTitle">Profi felszerelés, amikor szükséged van rá.</h1>
+          <div class="underNavGombok">
+            <a href="#" class="gomb gombLight">Eszközkatalógus</a>
+            <a href="#" class="gomb gombLight">Bérlés</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="mainStuff"></section>
+      <section id="mainBody"></section>
+    </main>
 
     <footer>
       <div class="footerOszlopok">
         <div>
-          <h4>Oldalak</h4>
+          <h2>Oldalak</h2>
           <a href="#">Főoldal</a>
           <a href="#">Eszközkatalógus</a>
           <a href="#">Rendelés</a>
@@ -145,7 +149,7 @@
           <a href="#">Profil</a>
         </div>
         <div>
-          <h4>Ügyfélszolgálat</h4>
+          <h2>Ügyfélszolgálat</h2>
           <a href="#">Bérlési feltételek</a>
           <a href="#">Szállítás és átvétel</a>
           <a href="#">Kaució és biztosítás</a>
@@ -153,7 +157,7 @@
           <a href="#">Kapcsolat</a>
         </div>
         <div>
-          <h4>Közösségi média</h4>
+          <h2>Közösségi média</h2>
           <a href="#">Facebook</a>
           <a href="#">Instagram</a>
           <a href="#">YouTube</a>
@@ -161,10 +165,12 @@
           <a href="#">LinkedIn</a>
         </div>
         <div>
-          <h4>Elérhetőség</h4>
-          <a href="mailto:info@luxsonic.hu">info@luxsonic.hu</a>
-          <a href="tel:+3612345678">+36 1 234 5678</a>
-          <span>Budapest, Minta utca 1.</span>
+          <h2>Elérhetőség</h2>
+          <address>
+            <a href="mailto:info@luxsonic.hu">info@luxsonic.hu</a>
+            <a href="tel:+3612345678">+36 1 234 5678</a>
+            <span>Budapest, Minta utca 1.</span>
+          </address>
         </div>
       </div>
       <div class="footerLegal">
@@ -175,7 +181,6 @@
       <p class="nagyFooter">LuxSonic</p>
       <p class="copyright">© LuxSonic 2026</p>
     </footer>
-
 
     <script src="./assets/script/script.js"></script>
   </body>

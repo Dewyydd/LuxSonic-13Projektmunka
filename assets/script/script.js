@@ -1,7 +1,8 @@
 let body = document.querySelector("body");
 let nav = document.querySelector("#mainNav");
 let title = document.querySelector("#websiteTitle");
-let hamburger = document.querySelector("#hamburger").querySelector("svg");
+let hamburgerBtn = document.querySelector("#hamburger");
+let hamburger = hamburgerBtn.querySelector("svg");
 let profileIcon = document.querySelector("#profileIcon").querySelector("svg");
 let menuOverlay = document.querySelector("#menuOverlay");
 let closeNav = document.querySelector("#closeNav");
@@ -11,23 +12,24 @@ let hover = false;
 let scrolledOver = false;
 
 function openMenu() {
-  body.classList.toggle("menuOverlayVisible");
-  body.classList.toggle("menuOverlayInvisible");
+  body.classList.add("menuOverlayVisible");
+  body.classList.remove("menuOverlayInvisible");
   body.style.overflow = "hidden";
-};
-
-
-function CloseMenu() {
-  body.classList.toggle("menuOverlayVisible");
-  body.classList.toggle("menuOverlayInvisible");
-  body.style.overflow = "";
+  hamburgerBtn.setAttribute("aria-expanded", "true");
 }
 
-hamburger.onclick = openMenu;
+function closeMenu() {
+  body.classList.remove("menuOverlayVisible");
+  body.classList.add("menuOverlayInvisible");
+  body.style.overflow = "";
+  hamburgerBtn.setAttribute("aria-expanded", "false");
+}
+
+hamburgerBtn.onclick = openMenu;
 bottomMenu.onclick = openMenu;
 
-closeNav.onclick = CloseMenu;
-menuOverlay.onclick = CloseMenu;
+closeNav.onclick = closeMenu;
+menuOverlay.onclick = closeMenu;
 
 function updateNav() {
   if (hover || scrolledOver) {

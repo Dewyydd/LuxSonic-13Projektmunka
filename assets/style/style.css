@@ -23,6 +23,10 @@ body {
   font-family: "Ubuntu";
 }
 
+main {
+  margin-bottom: 35px;
+}
+
 button {
   background: none;
   border: 0;
@@ -31,10 +35,6 @@ button {
   color: inherit;
   cursor: pointer;
   display: flex;
-}
-
-#mainBody {
-  height: 75vh;
 }
 
 #menuOverlay {
@@ -163,7 +163,7 @@ button {
   transition:
     opacity 0.4s ease,
     transform 0.4s ease;
-    letter-spacing: normal;
+  letter-spacing: normal;
 }
 
 #websiteTitle span.scrolledNav {
@@ -288,6 +288,16 @@ button {
   color: white;
 }
 
+.koszontoCim {
+  padding: 10vh 5% 5vh;
+  text-align: center;
+}
+.koszontoCim h2 {
+  font-family: "Doppio One";
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+}
+
 /* footer szarsagok */
 footer {
   background: black;
@@ -376,7 +386,7 @@ footer {
     fill: black;
   }
 
-  .bottomBtn {
+  .bottomgomb {
     flex: 1;
     height: 100%;
     display: flex;

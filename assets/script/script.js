@@ -2,8 +2,8 @@ let body = document.querySelector("body");
 let nav = document.querySelector("#mainNav");
 let title = document.querySelector("#websiteTitle");
 let titleSpan = title.querySelector("span");
-let hamburgerBtn = document.querySelector("#hamburger");
-let hamburger = hamburgerBtn.querySelector("svg");
+let hamburgergomb = document.querySelector("#hamburger");
+let hamburger = hamburgergomb.querySelector("svg");
 let profileIcon = document.querySelector("#profileIcon").querySelector("svg");
 let menuOverlay = document.querySelector("#menuOverlay");
 let closeNav = document.querySelector("#closeNav");
@@ -25,7 +25,7 @@ function closeMenu() {
   body.style.overflow = "";
 }
 
-hamburgerBtn.onclick = openMenu;
+hamburgergomb.onclick = openMenu;
 bottomMenu.onclick = openMenu;
 
 closeNav.onclick = closeMenu;

@@ -110,6 +110,7 @@ button {
   width: 100%;
   min-height: 75px;
   height: 16vh;
+  max-height: 150px;
   gap: 2%;
   display: flex;
   align-items: center;
@@ -118,19 +119,6 @@ button {
   transition:
     background-color 0.7s ease,
     height 0.8s ease-out;
-}
-
-#mainNav.scrolledNav {
-  height: 12.5vh;
-}
-
-#mainNav.scrolledNav #websiteTitle {
-  font-size: 2.25rem;
-}
-
-#websiteTitle span.scrolledNav {
-  visibility: hidden;
-  display: none;
 }
 
 #mainNav > div {
@@ -154,17 +142,43 @@ button {
   font-variant: small-caps;
   font-weight: 900;
   font-family: "Doppio One";
-  transition: 
-  color 0.5s ease,
-  font-size 0.7s ease;
+  transition:
+    color 0.5s ease,
+    font-size 0.7s ease,
+    letter-spacing 0.15s ease-in-out;
+}
+
+#websiteTitle:hover {
+  letter-spacing: 5%;
+}
+
+#websiteTitle:hover span {
+  letter-spacing: 0;
 }
 
 #websiteTitle span {
   font-size: 1rem;
   color: inherit;
-  transition: 
-  visibility 0.5s ease,
-  display 0.5s ease;
+  font-weight: normal;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+    letter-spacing: normal;
+}
+
+#websiteTitle span.scrolledNav {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+#mainNav.scrolledNav {
+  height: 12.5vh;
+  max-height: 110px;
+}
+
+#mainNav.scrolledNav #websiteTitle {
+  font-size: 2.25rem;
+  transform: translateY(12px);
 }
 
 #websiteTitle.invertedNavItem {

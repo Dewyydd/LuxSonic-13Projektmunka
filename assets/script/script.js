@@ -63,20 +63,21 @@ window.onscroll = function () {
     titleSpan.classList.add("scrolledNav");
     updateNav();
   } else if (window.scrollY === 0 && scrolledOver) {
-    scrolledOver = false;
-    waitingForHeight = true;
-    nav.classList.remove("scrolledNav");
-    titleSpan.classList.remove("scrolledNav");
-    updateNav();
+    setTimeout(function () {
+      scrolledOver = false;
+      waitingForHeight = true;
+      nav.classList.remove("scrolledNav");
+      titleSpan.classList.remove("scrolledNav");
+    }, 50);
   }
 };
 
 function heightDone(event) {
-  if (event.target === nav && event.propertyName === "height" && waitingForHeight) {
+  if (event.propertyName === "height" && waitingForHeight) {
     waitingForHeight = false;
-    setTimeout(updateNav(), 3500);
+    setTimeout(updateNav(), 4500);
   }
 }
- 
+
 nav.addEventListener("transitionend", heightDone);
 nav.addEventListener("transitioncancel", heightDone);

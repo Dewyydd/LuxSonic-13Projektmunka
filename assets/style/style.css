@@ -343,7 +343,7 @@ footer {
   font-variant: small-caps;
   font-size: clamp(3rem, 8vw, 6rem);
   text-align: center;
-  margin: 8vh 0 2vh;
+  margin: 5vh 0 1vh;
   line-height: 1;
 }
 .copyright {

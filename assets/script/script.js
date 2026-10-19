@@ -15,14 +15,12 @@ function openMenu() {
   body.classList.add("menuOverlayVisible");
   body.classList.remove("menuOverlayInvisible");
   body.style.overflow = "hidden";
-  hamburgerBtn.setAttribute("aria-expanded", "true");
 }
 
 function closeMenu() {
   body.classList.remove("menuOverlayVisible");
   body.classList.add("menuOverlayInvisible");
   body.style.overflow = "";
-  hamburgerBtn.setAttribute("aria-expanded", "false");
 }
 
 hamburgerBtn.onclick = openMenu;

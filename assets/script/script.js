@@ -1,6 +1,7 @@
 let body = document.querySelector("body");
 let nav = document.querySelector("#mainNav");
 let title = document.querySelector("#websiteTitle");
+let titleSpan = title.querySelector("span");
 let hamburgerBtn = document.querySelector("#hamburger");
 let hamburger = hamburgerBtn.querySelector("svg");
 let profileIcon = document.querySelector("#profileIcon").querySelector("svg");
@@ -10,6 +11,7 @@ let bottomMenu = document.querySelector("#bottomMenu");
 
 let hover = false;
 let scrolledOver = false;
+let waitingForHeight = false;
 
 function openMenu() {
   body.classList.add("menuOverlayVisible");
@@ -30,7 +32,7 @@ closeNav.onclick = closeMenu;
 menuOverlay.onclick = closeMenu;
 
 function updateNav() {
-  if (hover || scrolledOver) {
+  if (hover || scrolledOver || waitingForHeight) {
     nav.classList.add("invertedNav");
     title.classList.add("invertedNavItem");
     hamburger.setAttribute("fill", "black");
@@ -54,11 +56,27 @@ nav.onmouseleave = function () {
 };
 
 window.onscroll = function () {
-  if (window.scrollY > 0 && scrolledOver == false) {
+  if (window.scrollY > 0 && !scrolledOver) {
     scrolledOver = true;
+    waitingForHeight = false;
+    nav.classList.add("scrolledNav");
+    titleSpan.classList.add("scrolledNav");
     updateNav();
-  } else if (window.scrollY == 0 && scrolledOver == true) {
+  } else if (window.scrollY === 0 && scrolledOver) {
     scrolledOver = false;
+    waitingForHeight = true;
+    nav.classList.remove("scrolledNav");
+    titleSpan.classList.remove("scrolledNav");
     updateNav();
   }
 };
+
+function heightDone(event) {
+  if (event.target === nav && event.propertyName === "height" && waitingForHeight) {
+    waitingForHeight = false;
+    setTimeout(updateNav(), 3500);
+  }
+}
+ 
+nav.addEventListener("transitionend", heightDone);
+nav.addEventListener("transitioncancel", heightDone);

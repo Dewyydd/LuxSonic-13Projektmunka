@@ -310,6 +310,7 @@ footer {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 32px;
 }
+
 .footerOszlopok div,
 .footerOszlopok address {
   display: flex;
@@ -375,7 +376,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 50px;
+    height: 64px;
     z-index: 2;
     align-items: center;
     justify-content: space-around;
@@ -388,7 +389,7 @@ footer {
 
   .bottomgomb {
     flex: 1;
-    height: 100%;
+    height: 85%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -430,5 +431,22 @@ footer {
 
   #sideNav ul {
     max-width: 100%;
+  }
+
+  .footerOszlopok {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  .footerOszlopok h2,
+  .footerOszlopok a,
+  .footerOszlopok span {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footerLegal {
+    justify-content: space-evenly;
   }
 }

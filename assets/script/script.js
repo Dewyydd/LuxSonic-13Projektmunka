@@ -8,6 +8,7 @@ let profileIcon = document.querySelector("#profileIcon").querySelector("svg");
 let menuOverlay = document.querySelector("#menuOverlay");
 let closeNav = document.querySelector("#closeNav");
 let bottomMenu = document.querySelector("#bottomMenu");
+let backToTop = document.querySelector("#backToTop");
 
 let hover = false;
 let scrolledOver = false;
@@ -68,7 +69,18 @@ window.onscroll = function () {
     nav.classList.remove("scrolledNav");
     titleSpan.classList.remove("scrolledNav");
   }
+
+  if (window.scrollY > 30) {
+    backToTop.classList.add("visibleTopButton");
+  } else if (window.scrollY <= 30) {
+    backToTop.classList.remove("visibleTopButton");
+  }
 };
+
+function backtotop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop;
+}
 
 function heightDone(event) {
   if (event.propertyName === "height" && waitingForHeight) {

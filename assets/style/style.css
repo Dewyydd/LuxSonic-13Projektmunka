@@ -70,6 +70,28 @@ button {
   text-transform: uppercase;
 }
 
+#backToTop {
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  visibility: visible;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 10px 40px -5px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  padding: 0.35%;
+  bottom: 2%;
+  right: 1.75%;
+
+  transition: opacity 0.2s ease;
+}
+
+#backToTop.visibleTopButton {
+  opacity: 1;
+}
+
 #closeNav {
   align-self: flex-end;
 }

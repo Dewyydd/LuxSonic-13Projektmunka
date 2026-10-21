@@ -85,10 +85,16 @@ button {
   bottom: 2%;
   right: 1.75%;
 
-  transition: opacity 0.2s ease;
+  transition: opacity 0.35s ease;
 }
 
-#backToTop.visibleTopButton {
+#backToTop svg {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+#backToTop.visibleTopButton,
+#backToTop.visibleTopButton svg {
   opacity: 1;
 }
 
@@ -173,6 +179,7 @@ button {
   transition:
     color 0.5s ease,
     font-size 0.7s ease,
+    transform 0.8s ease-out,
     letter-spacing 0.15s ease-in-out;
 }
 

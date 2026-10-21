@@ -77,11 +77,6 @@ window.onscroll = function () {
   }
 };
 
-function backtotop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop;
-}
-
 function heightDone(event) {
   if (event.propertyName === "height" && waitingForHeight) {
     waitingForHeight = false;
@@ -91,3 +86,7 @@ function heightDone(event) {
 
 nav.addEventListener("transitionend", heightDone);
 nav.addEventListener("transitioncancel", heightDone);
+
+backToTop.onclick = function () {
+  window.scrollTo(0,0);
+};

@@ -405,6 +405,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  #backToTop {
+    display: none;
+  }
+
   #bottomNav {
     display: flex;
     position: fixed;

@@ -37,14 +37,6 @@ button {
   display: flex;
 }
 
-#menuOverlay {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.65);
-  width: 100vw;
-  height: 100vh;
-  z-index: 4;
-}
-
 #sideNav {
   z-index: 5;
   color: white;
@@ -82,12 +74,26 @@ button {
   align-self: flex-end;
 }
 
+#menuOverlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
 .menuOverlayVisible > #menuOverlay {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .menuOverlayInvisible > #menuOverlay {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .menuOverlayVisible > #sideNav {

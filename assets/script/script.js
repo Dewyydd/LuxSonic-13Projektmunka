@@ -73,7 +73,7 @@ window.onscroll = function () {
 function heightDone(event) {
   if (event.propertyName === "height" && waitingForHeight) {
     waitingForHeight = false;
-    setTimeout(updateNav(), 3500);
+    updateNav();
   }
 }
 

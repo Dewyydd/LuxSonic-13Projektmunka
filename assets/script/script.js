@@ -1,37 +1,39 @@
 let body = document.querySelector("body");
-let nav = document.querySelector("nav");
+let nav = document.querySelector("#mainNav");
 let title = document.querySelector("#websiteTitle");
-let hamburger = document.querySelector("#hamburger").querySelector("svg");
+let titleSpan = title.querySelector("span");
+let hamburgergomb = document.querySelector("#hamburger");
+let hamburger = hamburgergomb.querySelector("svg");
 let profileIcon = document.querySelector("#profileIcon").querySelector("svg");
 let menuOverlay = document.querySelector("#menuOverlay");
 let closeNav = document.querySelector("#closeNav");
 let bottomMenu = document.querySelector("#bottomMenu");
-let bottomHome = document.querySelector("#bottomHome");
+let backToTop = document.querySelector("#backToTop");
 
 let hover = false;
 let scrolledOver = false;
+let waitingForHeight = false;
 
 function openMenu() {
-  body.classList.toggle("menuOverlayVisible");
-  body.classList.toggle("menuOverlayInvisible");
+  body.classList.add("menuOverlayVisible");
+  body.classList.remove("menuOverlayInvisible");
   body.style.overflow = "hidden";
-};
+}
 
-
-function CloseMenu() {
-  body.classList.toggle("menuOverlayVisible");
-  body.classList.toggle("menuOverlayInvisible");
+function closeMenu() {
+  body.classList.remove("menuOverlayVisible");
+  body.classList.add("menuOverlayInvisible");
   body.style.overflow = "";
 }
 
-hamburger.onclick = openMenu;
+hamburgergomb.onclick = openMenu;
 bottomMenu.onclick = openMenu;
 
-closeNav.onclick = CloseMenu;
-menuOverlay.onclick = CloseMenu;
+closeNav.onclick = closeMenu;
+menuOverlay.onclick = closeMenu;
 
 function updateNav() {
-  if (hover || scrolledOver) {
+  if (hover || scrolledOver || waitingForHeight) {
     nav.classList.add("invertedNav");
     title.classList.add("invertedNavItem");
     hamburger.setAttribute("fill", "black");
@@ -55,73 +57,36 @@ nav.onmouseleave = function () {
 };
 
 window.onscroll = function () {
-  if (window.scrollY > 0 && scrolledOver == false) {
+  if (window.scrollY > 0 && !scrolledOver) {
     scrolledOver = true;
+    waitingForHeight = false;
+    nav.classList.add("scrolledNav");
+    titleSpan.classList.add("scrolledNav");
     updateNav();
-  } else if (window.scrollY == 0 && scrolledOver == true) {
+  } else if (window.scrollY === 0 && scrolledOver) {
     scrolledOver = false;
-    updateNav();
+    waitingForHeight = true;
+    nav.classList.remove("scrolledNav");
+    titleSpan.classList.remove("scrolledNav");
+  }
+
+  if (window.scrollY > 30) {
+    backToTop.classList.add("visibleTopButton");
+  } else if (window.scrollY <= 30) {
+    backToTop.classList.remove("visibleTopButton");
   }
 };
 
-bottomHome.onclick = function (event) {
-  event.preventDefault();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function heightDone(event) {
+  if (event.propertyName === "height" && waitingForHeight) {
+    waitingForHeight = false;
+    updateNav();
+  }
+}
+
+nav.addEventListener("transitionend", heightDone);
+nav.addEventListener("transitioncancel", heightDone);
+
+backToTop.onclick = function () {
+  window.scrollTo(0,0);
 };
-/* ---------- Scroll animációk ---------- */
-(function () {
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce || !("IntersectionObserver" in window)) return;
-
-  const groups = [
-    [".sectionHead h2", "up"],
-    [".tile", "up"],
-    [".featureImg", "left"],
-    [".featureText > *", "up"],
-    [".galleryHead > *", "up"],
-    [".gThumb", "zoom"],
-    [".footCols > div", "up"],
-    [".footLegal", "up"],
-    [".wordmark", "up"],
-  ];
-
-  const items = [];
-  groups.forEach(([selector, type]) => {
-    document.querySelectorAll(selector).forEach((el, i) => {
-      el.classList.add("reveal", "reveal-" + type);
-      el.style.transitionDelay = (i % 5) * 0.1 + "s";
-      items.push(el);
-    });
-  });
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15, rootMargin: "0px 0px -5% 0px" }
-  );
-  items.forEach((el) => observer.observe(el));
-
-  // Enyhe parallax a hero képen
-  const hero = document.querySelector("#underNavImg");
-  let ticking = false;
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        if (window.scrollY < window.innerHeight) {
-          hero.style.backgroundPositionY = window.scrollY * 0.3 + "px";
-        }
-        ticking = false;
-      });
-    },
-    { passive: true }
-  );
-})();

@@ -7,54 +7,62 @@
     <link rel="stylesheet" href="./assets/style/style.css" />
   </head>
   <body class="menuOverlayInvisible">
-    <aside id="sideNav">
-      <div id="closeNav">
+    <!-- navigacios cuccok -->
+    <nav id="sideNav">
+      <button type="button" id="closeNav">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="48"
           height="48"
           fill="white"
-          class="bi bi-x-lg"
           viewBox="0 0 16 16"
         >
           <path
             d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
           />
         </svg>
-      </div>
+      </button>
 
-      <h1><a href="index.html">Főoldal</a></h1>
-      <h1><a href="katalogus.html">Eszközkatalógus</a></h1>
-      <h1><a href="berles.html">Bérlés / Rendelés</a></h1>
-      <h1><a href="galeria.html">Galéria</a></h1>
-    </aside>
+      <ul>
+        <li><a href="#">Főoldal</a></li>
+        <li><a href="#">Eszközkatalógus</a></li>
+        <li><a href="#">Rendelés</a></li>
+        <li><a href="#">Galéria</a></li>
+        <li><a href="#">Profil</a></li>
+      </ul>
+    </nav>
+
     <div id="menuOverlay"></div>
-    <nav>
-      <div>
-        <div id="hamburger">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
-            fill="white"
-            class="bi bi-list"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-            />
-          </svg>
-        </div>
-        <h1 id="websiteTitle"><a href="index.html">LuxSonic</a><p>EST. 2026</p></h1>
-        <div id="profileIcon">
-          <a href="index.html">
+
+    <header>
+      <nav id="mainNav">
+        <div>
+          <button type="button" id="hamburger">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
               height="48"
               fill="white"
-              class="bi bi-person"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+              />
+            </svg>
+          </button>
+
+          <a href="#" id="websiteTitle">
+            LuxSonic
+            <span>Sound & Light</span>
+          </a>
+
+          <a href="#" id="profileIcon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              fill="white"
               viewBox="0 0 16 16"
             >
               <path
@@ -63,17 +71,31 @@
             </svg>
           </a>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
-    </div>    <div id="bottomNav">
-      <div id="bottomMenu" class="bottomBtn">
+    <button id="backToTop">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+        />
+      </svg>
+    </button>
+
+    <nav id="bottomNav">
+      <button type="button" id="bottomMenu" class="bottomgomb">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="48"
           height="48"
           fill="white"
-          class="bi bi-list"
           viewBox="0 0 16 16"
         >
           <path
@@ -81,13 +103,21 @@
             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
           />
         </svg>
-      </div>
-      <a href="#" id="bottomHome" class="bottomBtn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-houses" viewBox="0 0 16 16">
-        <path d="M5.793 1a1 1 0 0 1 1.414 0l.647.646a.5.5 0 1 1-.708.708L6.5 1.707 2 6.207V12.5a.5.5 0 0 0 .5.5.5.5 0 0 1 0 1A1.5 1.5 0 0 1 1 12.5V7.207l-.146.147a.5.5 0 0 1-.708-.708zm3 1a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708zm.707.707L5 7.207V13.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V7.207z"/>
-      </svg>
+      </button>
+      <a href="#" id="bottomHome" class="bottomgomb">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M5.793 1a1 1 0 0 1 1.414 0l.647.646a.5.5 0 1 1-.708.708L6.5 1.707 2 6.207V12.5a.5.5 0 0 0 .5.5.5.5 0 0 1 0 1A1.5 1.5 0 0 1 1 12.5V7.207l-.146.147a.5.5 0 0 1-.708-.708zm3 1a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708zm.707.707L5 7.207V13.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V7.207z"
+          />
+        </svg>
       </a>
-      <div id="bottomProfile" class="bottomBtn">
+      <a href="#" id="bottomProfile" class="bottomgomb">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="48"
@@ -100,97 +130,205 @@
             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
           />
         </svg>
-      </div>
-    </div>
+      </a>
+    </nav>
 
-    <section id="underNavImg">
-      <div class="heroText">
-        <h2>Profi felszerelés, amikor szükséged van rá.</h2>
-        <div class="heroBtns">
-          <a href="katalogus.html" class="btn btnLight">Eszközkatalógus</a>
-          <a href="berles.html" class="btn btnLight">Bérlés</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="mainStuff">
-      <div class="sectionHead">
-        <h2>Fedezd fel az oldalunkat</h2>
-      </div>
-
-      <div class="tileGrid">
-        <a href="katalogus.html" class="tile tileA">
-          <div class="tileImg"></div>
-          <div class="tileCaption">
-            <h3>Eszközkatalógus</h3>
-            <p>Teljes kínálatunk egy helyen, kategóriák és részletes adatok szerint.</p>
-            <span class="tileLink">Megnézem &rarr;</span>
+    <!-- fooldal cuccosai -->
+    <main>
+      <section id="underNavImg">
+        <div class="underNavText">
+          <h1 id="heroTitle">Profi felszerelés, amikor szükséged van rá.</h1>
+          <div class="underNavGombok">
+            <a href="#" class="gomb gombLight">Eszközkatalógus</a>
+            <a href="#" class="gomb gombLight">Bérlés</a>
           </div>
-        </a>
-        <a href="galeria.html" class="tile tileB">
-          <div class="tileImg"></div>
-          <div class="tileCaption">
-            <h3>Galéria</h3>
-            <p>Képek az eszközeinkről és a velük készült munkákról.</p>
-            <span class="tileLink">Megnézem &rarr;</span>
+        </div>
+      </section>
+
+      <section id="mainBody">
+        <div class="koszontoCim">
+          <h2>Fedezd fel az oldalunkat</h2>
+        </div>
+
+        <div class="tileGrid">
+          <a href="katalogus.html" class="tile tileA">
+            <div class="tileImg"></div>
+            <div class="tileCaption">
+              <h3>Eszközkatalógus</h3>
+              <p>
+                Teljes kínálatunk egy helyen, kategóriák és részletes adatok
+                szerint.
+              </p>
+              <span class="tileLink">Megnézem &rarr;</span>
+            </div>
+          </a>
+          <a href="galeria.html" class="tile tileB">
+            <div class="tileImg"></div>
+            <div class="tileCaption">
+              <h3>Galéria</h3>
+              <p>Képek az eszközeinkről és a velük készült munkákról.</p>
+              <span class="tileLink">Megnézem &rarr;</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="feature">
+          <div class="featureImg"></div>
+          <div class="featureText">
+            <p class="kisSzoveg">Rendelés</p>
+            <h2>Három lépésben a kezedben az eszköz.</h2>
+            <ol class="lepesek">
+              <li><strong>Válassz</strong> a katalógusból.</li>
+              <li><strong>Foglald le</strong> a kívánt időszakra.</li>
+              <li>
+                <strong>Vedd át</strong> az eszközt, és kezdheted a munkát.
+              </li>
+            </ol>
+            <a href="berles.html" class="gomb gombDark">Bérlés indítása</a>
           </div>
-        </a>
-      </div>
-
-      <div class="feature">
-        <div class="featureImg"></div>
-        <div class="featureText">
-          <p class="eyebrow">Bérlés / Rendelés</p>
-          <h2>Három lépésben a kezedben az eszköz.</h2>
-          <ol class="steps">
-            <li><strong>Válassz</strong> a katalógusból.</li>
-            <li><strong>Foglald le</strong> a kívánt időszakra.</li>
-            <li><strong>Vedd át</strong> az eszközt, és kezdheted a munkát.</li>
-          </ol>
-          <a href="berles.html" class="btn btnDark">Bérlés indítása</a>
         </div>
-      </div>
+      </section>
 
-      <div class="galleryPreview">
-        <div class="galleryHead">
-          <h2>Ízelítő a galériából</h2>
-          <a href="galeria.html" class="btn btnDark">Teljes galéria</a>
+      <section id="gyik">
+        <div class="koszontoCim">
+          <p class="kisSzoveg">Gyakori kérdések</p>
+          <h2>Amit érdemes tudni bérlés előtt</h2>
         </div>
-        <div class="galleryStrip">
-          <a href="galeria.html" class="gThumb g1" aria-label="Galéria kép 1"></a>
-          <a href="galeria.html" class="gThumb g2" aria-label="Galéria kép 2"></a>
-          <a href="galeria.html" class="gThumb g3" aria-label="Galéria kép 3"></a>
-          <a href="galeria.html" class="gThumb g4" aria-label="Galéria kép 4"></a>
-        </div>
-      </div>
-    </section>
 
-    <footer id="mainFooter">
-      <div class="footCols">
+        <div class="gyikLista">
+          <details class="gyikElem" name="gyik">
+            <summary>Kell kauciót fizetnem?</summary>
+            <p>
+              Igen, az eszköz értékétől függően kauciót kérünk, amit
+              sérülésmentes visszahozatal esetén azonnal visszaadunk. A pontos
+              összeget az eszköz adatlapján és a foglalás összegzésében is
+              látod.
+            </p>
+          </details>
+
+          <details class="gyikElem" name="gyik">
+            <summary>Hogyan történik az átvétel és a szállítás?</summary>
+            <p>
+              Az eszközöket személyesen átveheted nálunk, vagy kérhetsz
+              házhoz szállítást is. A szállítás díja a távolságtól függ, ezt a
+              rendelés lezárása előtt megmutatjuk.
+            </p>
+          </details>
+
+          <details class="gyikElem" name="gyik">
+            <summary>Mi történik, ha később hozom vissza az eszközt?</summary>
+            <p>
+              Ha tudod, hogy csúszni fogsz, szólj időben, és ha az eszköz
+              szabad, meghosszabbítjuk a bérlést. Szó nélküli késésnél a
+              további napokat a napi bérleti díj szerint számoljuk el.
+            </p>
+          </details>
+
+          <details class="gyikElem" name="gyik">
+            <summary>Mit tegyek, ha az eszköz megsérül vagy meghibásodik?</summary>
+            <p>
+              Ne próbáld meg saját magad megjavítani, hanem jelezd nekünk minél
+              hamarabb telefonon vagy e-mailben. Normál használat közben
+              fellépő hibáért nem terhelünk, a rongálódás költségét a kauciós
+              és biztosítási feltételek szerint rendezzük.
+            </p>
+          </details>
+
+          <details class="gyikElem" name="gyik">
+            <summary>Lemondhatom a foglalást?</summary>
+            <p>
+              Igen. Az átvétel előtt legalább 48 órával ingyenesen
+              lemondhatod, később a lemondási feltételek szerint számolunk fel
+              díjat.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section id="kapcsolat">
+        <div class="kapcsolatDoboz">
+          <div class="kapcsolatSzoveg">
+            <p class="kisSzoveg">Kapcsolat</p>
+            <h2>Nem találod, amit keresel?</h2>
+            <p>
+              Írj nekünk, és egy munkanapon belül válaszolunk. Egyedi ajánlatot
+              is kérhetsz nagyobb rendezvényhez.
+            </p>
+          </div>
+
+          <form id="uzenetForm" class="uzenetForm" novalidate>
+            <div class="mezo">
+              <label for="uzNev" class="cimke">Név</label>
+              <input
+                type="text"
+                id="uzNev"
+                name="nev"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="mezo">
+              <label for="uzEmail" class="cimke">E-mail-cím</label>
+              <input
+                type="email"
+                id="uzEmail"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="mezo">
+              <label for="uzTargy" class="cimke">Tárgy</label>
+              <select id="uzTargy" name="targy" required>
+                <option value="">Válassz...</option>
+                <option>Árajánlatkérés</option>
+                <option>Kérdés egy eszközről</option>
+                <option>Foglalással kapcsolatos kérdés</option>
+                <option>Egyéb</option>
+              </select>
+            </div>
+
+            <div class="mezo">
+              <label for="uzUzenet" class="cimke">Üzenet</label>
+              <textarea id="uzUzenet" name="uzenet" rows="6" required></textarea>
+            </div>
+
+            <div class="mezo">
+              <label class="jelolo">
+                <input type="checkbox" id="uzAdatvedelem" required />
+                <span>Elfogadom az <a href="#">adatvédelmi tájékoztatót</a>.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="gomb gombDark">Üzenet küldése</button>
+            <p id="formVisszajelzes" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footerOszlopok">
         <div>
-          <h4>Oldalak</h4>
-          <a href="index.html">Főoldal</a>
-          <a href="katalogus.html">Eszközkatalógus</a>
-          <a href="berles.html">Bérlés / Rendelés</a>
-          <a href="galeria.html">Galéria</a>
+          <h2>Oldalak</h2>
+          <a href="#">Főoldal</a>
+          <a href="#">Eszközkatalógus</a>
+          <a href="#">Rendelés</a>
+          <a href="#">Galéria</a>
+          <a href="#">Profil</a>
         </div>
         <div>
-          <h4>Ügyfélszolgálat</h4>
+          <h2>Ügyfélszolgálat</h2>
           <a href="#">Bérlési feltételek</a>
           <a href="#">Szállítás és átvétel</a>
           <a href="#">Kaució és biztosítás</a>
-          <a href="#">Gyakori kérdések</a>
-          <a href="#">Kapcsolat</a>
+          <a href="#gyik">Gyakori kérdések</a>
+          <a href="#kapcsolat">Kapcsolat</a>
         </div>
         <div>
-          <h4>Rólunk</h4>
-          <a href="#">Bemutatkozás</a>
-          <a href="#">Karrier</a>
-          <a href="#">Sajtó</a>
-          <a href="#">Partnereink</a>
-        </div>
-        <div>
-          <h4>Közösségi média</h4>
+          <h2>Közösségi média</h2>
           <a href="#">Facebook</a>
           <a href="#">Instagram</a>
           <a href="#">YouTube</a>
@@ -198,23 +336,23 @@
           <a href="#">LinkedIn</a>
         </div>
         <div>
-          <h4>Elérhetőség</h4>
-          <a href="mailto:info@luxsonic.hu">info@luxsonic.hu</a>
-          <a href="tel:+3612345678">+36 1 234 5678</a>
-          <span>Budapest, Minta utca 1.</span>
-          <span>H–P: 9:00–17:00</span>
+          <h2>Elérhetőség</h2>
+          <address>
+            <a href="mailto:info@luxsonic.hu">info@luxsonic.hu</a>
+            <a href="tel:+3612345678">+36 1 234 5678</a>
+            <span>Budapest, Minta utca 1.</span>
+          </address>
         </div>
       </div>
-      <div class="footLegal">
+      <div class="footerLegal">
         <a href="#">Adatvédelem</a>
         <a href="#">Süti szabályzat</a>
         <a href="#">ÁSZF</a>
-        <a href="#">Impresszum</a>
-        <a href="#">Akadálymentesség</a>
       </div>
-      <p class="wordmark">LuxSonic</p>
-      <p class="copy">© LuxSonic 2026</p>
+      <p class="nagyFooter">LuxSonic</p>
+      <p class="copyright">© LuxSonic 2026</p>
     </footer>
+
+    <script src="./assets/script/script.js"></script>
   </body>
-  <script src="./assets/script/script.js"></script>
 </html>

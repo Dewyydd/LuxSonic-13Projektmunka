@@ -23,10 +23,6 @@ body {
   font-family: "Ubuntu";
 }
 
-main {
-  margin-bottom: 35px;
-}
-
 button {
   background: none;
   border: 0;
@@ -488,4 +484,112 @@ footer {
   .footerLegal {
     justify-content: space-evenly;
   }
+}
+
+.lepesek {
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-weight: 300;
+  color: var(--muted);
+}
+.lepesek li {
+  counter-increment: step;
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+}
+.lepesek li::before {
+  content: counter(step);
+  font-family: "Doppio One";
+  font-size: 1.4rem;
+  color: var(--ink);
+}
+.lepesek strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.kisSzoveg {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: inherit;
+  opacity: 0.8;
+}
+
+.tileGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 0 8px;
+}
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+}
+.tileImg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s ease;
+}
+.tile:hover .tileImg {
+  transform: scale(1.04);
+}
+.tileA .tileImg {
+  background: linear-gradient(135deg, #8d8479, #3d3832);
+}
+.tileB .tileImg {
+  background: linear-gradient(135deg, #b9b6b0, #5d5a55);
+}
+.tileCaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+}
+.tileCaption h3 {
+  font-family: "Doppio One";
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+.tileCaption p {
+  font-weight: 300;
+  margin-top: 4px;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 8px 0;
+  background: var(--stone);
+}
+.featureImg {
+  min-height: 70vh;
+  background: linear-gradient(160deg, #b5715a, #6e3b2c);
+}
+.featureText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 8%;
+}
+.featureText h2 {
+  font-family: "Doppio One";
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+.featureText p:not(.kisSzoveg) {
+  font-weight: 300;
+  color: var(--muted);
 }

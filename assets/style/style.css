@@ -804,3 +804,16 @@ footer {
     gap: 32px;
   }
 }
+
+/* scroll reveal: a .reveal osztalyt a script.js adja hozza */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}

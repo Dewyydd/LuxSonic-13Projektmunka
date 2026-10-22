@@ -90,3 +90,30 @@ nav.addEventListener("transitioncancel", heightDone);
 backToTop.onclick = function () {
   window.scrollTo(0,0);
 };
+
+// scroll reveal: az elemek akkor jelennek meg, amikor a kepernyore gorgetunk
+// shortcut: egyszer animal (nem tunik el visszagorgetve), ha kell, ne hivjunk unobserve-ot
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const revealObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  document
+    .querySelectorAll(
+      ".koszontoCim, .tile, .featureImg, .featureText, .gyikElem, .kapcsolatSzoveg, .uzenetForm",
+    )
+    .forEach(function (el) {
+      // testverek kozt egymas utan, kis kesleltetessel
+      const sorszam = Array.from(el.parentElement.children).indexOf(el);
+      el.style.transitionDelay = Math.min(sorszam, 3) * 0.1 + "s";
+      el.classList.add("reveal");
+      revealObserver.observe(el);
+    });
+}

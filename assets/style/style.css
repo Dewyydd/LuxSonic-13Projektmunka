@@ -400,92 +400,6 @@ footer {
   color: white;
 }
 
-@media (max-width: 768px) {
-  #backToTop {
-    display: none;
-  }
-
-  #bottomNav {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 64px;
-    z-index: 2;
-    align-items: center;
-    justify-content: space-around;
-    background-color: white;
-  }
-
-  #bottomNav svg {
-    fill: black;
-  }
-
-  .bottomgomb {
-    flex: 1;
-    height: 85%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  #hamburger,
-  #profileIcon {
-    display: none;
-  }
-
-  body {
-    padding-bottom: 64px;
-  }
-
-  #mainNav {
-    width: 100vw;
-    left: 0;
-    right: 0;
-  }
-
-  #mainNav > div {
-    width: 100%;
-    padding: 0 12px;
-    justify-content: center;
-  }
-
-  #websiteTitle {
-    font-size: 2.5rem;
-  }
-
-  #sideNav {
-    width: 100%;
-    padding: 4%;
-    gap: 12px;
-    overflow: hidden;
-  }
-
-  #sideNav ul {
-    max-width: 100%;
-  }
-
-  .footerOszlopok {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-  }
-
-  .footerOszlopok h2,
-  .footerOszlopok a,
-  .footerOszlopok span {
-    display: flex;
-    justify-content: center;
-  }
-
-  .footerLegal {
-    justify-content: space-evenly;
-  }
-}
-
 .lepesek {
   list-style: none;
   counter-reset: LEPES;
@@ -638,4 +552,103 @@ footer {
   font-weight: 300;
   line-height: 1.6;
   color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    display: none;
+  }
+
+  #bottomNav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 64px;
+    z-index: 2;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+  }
+
+  #bottomNav svg {
+    fill: black;
+  }
+
+  .bottomgomb {
+    flex: 1;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  #hamburger,
+  #profileIcon {
+    display: none;
+  }
+
+  body {
+    padding-bottom: 64px;
+  }
+
+  #mainNav {
+    width: 100vw;
+    left: 0;
+    right: 0;
+  }
+
+  #mainNav > div {
+    width: 100%;
+    padding: 0 12px;
+    justify-content: center;
+  }
+
+  #websiteTitle {
+    font-size: 2.5rem;
+  }
+
+  #sideNav {
+    width: 100%;
+    padding: 4%;
+    gap: 12px;
+    overflow: hidden;
+  }
+
+  #sideNav ul {
+    max-width: 100%;
+  }
+
+  .footerOszlopok {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  .footerOszlopok h2,
+  .footerOszlopok a,
+  .footerOszlopok span {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footerLegal {
+    justify-content: space-evenly;
+  }
+
+  .feature {
+    grid-template-columns: 1fr;
+  }
+
+  .featureImg {
+    min-height: 45vh;
+  }
+
+  .tileGrid {
+    grid-template-columns: 1fr;
+  }
+  
 }
